@@ -28,5 +28,5 @@ is no necesary because it uses local storage to store the reminders
 ## Used technologies
 On the course it was used the technology below
 `JavaScript`,`CSS` and `HTML`
-
+___
 The project is available [here](https://andrewakosta.github.io/localStorageProject)
