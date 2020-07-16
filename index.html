@@ -8,25 +8,29 @@
   <title>Reminders</title>
 </head>
 <body>
-  <div id="content">
-    <h1>Local storage</h1>
-    <div class="row">
-      <div class="six colums">
-        <label for="reminder">Reminder</label>
+  <div class="main-content">
+
+    <div class="content">
+      <div class="add-reminder">
+        <label for="reminder"></label>
         <form  action="#" method="post" id="form">
           <label for="reminder"></label>
-          <textarea id="reminder"></textarea>
+          <textarea id="reminder" class="text-area"></textarea>
           <div id="checkboxs-content">
-            <input type="checkbox" id="low" name="" value="1" checked>
-            <input type="checkbox" id="median"name="" value="2">
-            <input type="checkbox" id="height" name="" value="3">
+            <input type="checkbox" class="" id="low" name="" value="1" checked>
+            <span class="redCheck">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="checkbox" class="checkbox" id="median"name="" value="2">
+            <span class="purpleCheck">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <input type="checkbox" class="checkbox" id="height" name="" value="3">
+            <span class="greenCheck">&nbsp;&nbsp;&nbsp;&nbsp;</span>
           </div>
-          <input type="submit"  name="" value="Add reminder">
+          <br>
+          <input type="submit" class="button-submit" name="" value="Add reminder">
         </form>
       </div>
       <div class="reminders-content">
         <h2>Remainders</h2>
-        <div id="list-reminders"></div>
+        <div id="list-reminders" class="list-reminders"></div>
       </div>
     </div>
   </div><!--End content-->

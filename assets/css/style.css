@@ -1,22 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+
+
+
 .content{
   display: grid;
-  grid-template-columns:  2fr
+  grid-template-columns: 1fr 1fr;
+  padding:15px
 }
+.list-reminders{
+  text-decoration: none;
+  list-style: none
+}
+.list-reminders li{
+  width: 80%;
+  height: 50px;
+  margin-bottom: 12px;
+  font-family: 'Varela Round', sans-serif;
+  box-shadow: 2px 2px 5px #999;
+  padding: 5px
+}
+.add-reminder{
+  padding-top: 100px;
+  text-align: center;
+
+}
+.reminders-content{
 
 
-
-
-
+}
 .important{
   color: red;
+  background-color: #ffe1e1;
 
 }
 .medion{
-  color:green;
+  color:purple;
+  background-color: #deb3de
 }
 .level{
-  color:yellow;
+  color:green;
+  background-color:#bbecbb;
 }
-body{
-  background: purple;
+.checkbox input:checked{
+  background-color: red;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Rowdies', cursive;
+  color: #020202c7
+}
+.text-area{
+  width: 70%;
+  height: 100px;
+  border-radius: 8px 8px 8px 8px;
+  border: 2px solid #3acfd573;
+  border-image: linear-gradient(to bottom, #69dee2 0%, #abd8ad 100%) 1;
+}
+.button-submit{
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  width: 30%;
+  height: 40px;
+  background-color: #16dcdc;
+  border-radius: 8px 8px 8px 8px;
+  border: 0px solid #000000;
+}
+.button-submit:hover{
+  background-color: #5ee6e6;
+  border-radius: 8px 8px 8px 8px;
+  border: 0px solid #000000;
+}
+.remove-reminder{
+  float: right;
+  cursor: pointer;
+}
+.redCheck{
+  background-color: red;
+  border-radius: 200px 200px 200px 200px;
+ -moz-border-radius: 200px 200px 200px 200px;
+ -webkit-border-radius: 200px 200px 200px 200px;
+ border: 0px solid #000000;
+}
+.purpleCheck{
+  background-color: purple;
+  border-radius: 200px 200px 200px 200px;
+ -moz-border-radius: 200px 200px 200px 200px;
+ -webkit-border-radius: 200px 200px 200px 200px;
+ border: 0px solid #000000;
+}
+.greenCheck{
+  background-color: green;
+  border-radius: 200px 200px 200px 200px;
+ -moz-border-radius: 200px 200px 200px 200px;
+ -webkit-border-radius: 200px 200px 200px 200px;
+ border: 0px solid #000000;
 }
