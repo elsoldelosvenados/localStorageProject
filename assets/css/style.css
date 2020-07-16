@@ -1,0 +1,22 @@
+.content{
+  display: grid;
+  grid-template-columns:  2fr
+}
+
+
+
+
+
+.important{
+  color: red;
+
+}
+.medion{
+  color:green;
+}
+.level{
+  color:yellow;
+}
+body{
+  background: purple;
+}

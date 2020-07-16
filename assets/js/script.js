@@ -1,7 +1,7 @@
 const listReminders = document.getElementById('list-reminders')
 const form = document.getElementById('form')
 const checkboxs = document.getElementById('checkboxs-content')
-
+let   checkValue;
 const checkboxsGroup = [
   document.getElementById('low'),
   document.getElementById('median'),
@@ -16,7 +16,7 @@ function eventListeners(){
   form.addEventListener('submit',addReminder)
   checkboxs.addEventListener('click', checkboxsValidate)
   listReminders.addEventListener('click', removeReminder)
-  document.addEventListener('DOMContentLoaded',loacalStorgeReady)
+  document.addEventListener('DOMContentLoaded',loadReminders)
 
 }
 
@@ -24,20 +24,10 @@ function addReminder(e){
 
   e.preventDefault()
   const reminder = document.getElementById('reminder')
-
-  const removeButton = document.createElement('a')
-  removeButton.classList = 'remove-reminder'
-  removeButton.innerText = 'X'
-
-  const li = document.createElement('li')
-  li.innerText = reminder.value
-
-  li.appendChild(removeButton)
-
-  listReminders.appendChild(li)
-  addReminderToLocalStorage(reminder.value)
-
+  getValueFromCheckbox()
+  addReminderToLocalStorage(reminder.value + checkValue)
   reminder.value = ''
+  loadReminders()
 }
 
 
@@ -49,19 +39,25 @@ function removeReminder(e){
     removeRemainderOnLocalStorage(e.target.parentElement.innerText)
   }
 }
-function loacalStorgeReady(){
+function loadReminders(){
   let reminders = getRemindersFromlocalStorage()
+  listReminders.innerText = ''
   reminders.forEach((reminder) =>{
     const removeButton = document.createElement('a')
     removeButton.classList = 'remove-reminder'
     removeButton.innerText = 'X'
-
     const li = document.createElement('li')
+    reminder[reminder.length -1] == '1' ? li.classList = 'important':null
+    reminder[reminder.length -1] == '2' ? li.classList = 'medion':null
+    reminder[reminder.length -1] == '3' ? li.classList = 'level':null
+    reminder = reminder.substring(0,reminder.length -1)
     li.innerText = reminder
     li.appendChild(removeButton)
     listReminders.appendChild(li)
   })
 }
+
+
 
 function addReminderToLocalStorage(reminder){
   let reminders = getRemindersFromlocalStorage()
@@ -76,7 +72,8 @@ function getRemindersFromlocalStorage(){
   }else{
     reminders = JSON.parse(localStorage.getItem('reminders'))
   }
-  return reminders
+
+  return orderReminders(reminders)
 }
 
 function removeRemainderOnLocalStorage(reminder){
@@ -86,7 +83,7 @@ function removeRemainderOnLocalStorage(reminder){
   reminders = getRemindersFromlocalStorage()
 
   reminders.forEach((reminder, index) =>{
-    if(removeRminder === reminder){
+    if(removeRminder === reminder.substring(0,reminder.length-1)){
       reminders.splice(index,1)
     }
   })
@@ -98,4 +95,31 @@ function checkboxsValidate(e){
     checkbox.checked = 0
   })
   e.target.checked = 1
+}
+
+function getValueFromCheckbox(){
+  checkboxsGroup.forEach((checkbox)=>{
+  if(checkbox.checked){
+    checkValue = checkbox.value
+  }
+})
+}
+
+function orderReminders(reminders){
+  const remindersOrdered = []
+  reminders.forEach((reminder)=>{
+    if(reminder[reminder.length -1] === '1'){
+    remindersOrdered.push(reminder)
+
+  }})
+  reminders.forEach((reminder) =>{
+    if(reminder[reminder.length -1] === '2'){
+    remindersOrdered.push(reminder)
+  }})
+  reminders.forEach((reminder) =>{
+    if(reminder[reminder.length -1] === '3'){
+    remindersOrdered.push(reminder)
+  }})
+ console.log(remindersOrdered)
+  return remindersOrdered
 }
