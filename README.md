@@ -1,9 +1,8 @@
 # Local storage project
-
-This is a practical project in which the use of the local storage is evidenced, in this case it is used to store a list of reminders which are organized in order of importance.
-
 ![status](https://img.shields.io/badge/status-running-green.svg?colorB=00C106) ![readme](https://img.shields.io/badge/readme-OK-green.svg?colorB=00C106) ![database](https://img.shields.io/badge/database-none-green.svg?colorB=00C106) ![commits](https://img.shields.io/badge/commits-8-blue.svg) ![Version](https://img.shields.io/badge/tag-v1.0-orange.svg)
 ![techs](https://img.shields.io/badge/techs-javascript—css—html-yellow.svg)
+
+This is a practical project in which the use of the local storage is evidenced, in this case it is used to store a list of reminders which are organized in order of importance.
 
 ---
 
